@@ -1,13 +1,13 @@
 {
   "name": "com.beardphantom.identify",
   "displayName": "Identify",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "unity": "2020.3",
   "description": "A consistent mechanism for uniquely identifying ScriptableObject instances.",
   "keywords": [
     "Identification",
-	"GUID",
-	"ScriptableObject"
+    "GUID",
+    "ScriptableObject"
   ],
   "category": "Framework",
   "type": "library"

@@ -10,6 +10,7 @@ namespace BeardPhantom.Identify
         #region Fields
 
         [SerializeField]
+        [HideInInspector]
         private string _hashString;
 
         #endregion
