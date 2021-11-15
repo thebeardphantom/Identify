@@ -47,6 +47,7 @@ namespace BeardPhantom.Identify
         #region Properties
 
         [field: SerializeField]
+        [field: HideInInspector]
         public Hash128 GuidHash { get; private set; }
 
         #endregion
