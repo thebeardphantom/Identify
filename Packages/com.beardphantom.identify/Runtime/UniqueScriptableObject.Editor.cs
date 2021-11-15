@@ -1,4 +1,7 @@
 ﻿#if UNITY_EDITOR
+#if !UNITY_2020
+using UnityEngine;
+#endif
 namespace BeardPhantom.Identify
 {
 #if UNITY_2020
