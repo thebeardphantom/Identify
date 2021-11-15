@@ -1,23 +1,14 @@
 ﻿#if UNITY_EDITOR
-using UnityEngine;
-
 namespace BeardPhantom.Identify
 {
 #if UNITY_2020
-    public partial class UniqueScriptableObject : ISerializationCallbackReceiver
+    public partial class UniqueScriptableObject
     {
         #region Methods
 
-        /// <inheritdoc />
-        public void OnBeforeSerialize()
+        private void UpdateHashString()
         {
             _hashString = IdentifyUtility.GetObjectIdAsHash128(this).ToString();
-        }
-
-        /// <inheritdoc />
-        public void OnAfterDeserialize()
-        {
-            GuidHash = Hash128.Parse(_hashString);
         }
 
         #endregion

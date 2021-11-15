@@ -3,7 +3,9 @@ using UnityEngine;
 namespace BeardPhantom.Identify
 {
 #if UNITY_2020
-    public partial class UniqueScriptableObject : ScriptableObject, IUniqueScriptableObject
+    public partial class UniqueScriptableObject : ScriptableObject,
+        IUniqueScriptableObject,
+        ISerializationCallbackReceiver
     {
         #region Fields
 
@@ -16,6 +18,24 @@ namespace BeardPhantom.Identify
 
         /// <inheritdoc />
         public Hash128 GuidHash { get; private set; }
+
+        #endregion
+
+        #region Methods
+
+        /// <inheritdoc />
+        public void OnBeforeSerialize()
+        {
+#if UNITY_EDITOR
+            UpdateHashString();
+#endif
+        }
+
+        /// <inheritdoc />
+        public void OnAfterDeserialize()
+        {
+            GuidHash = Hash128.Parse(_hashString);
+        }
 
         #endregion
     }
