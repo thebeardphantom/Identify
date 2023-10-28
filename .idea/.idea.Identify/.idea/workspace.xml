@@ -5,16 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc72234d-f087-4687-851f-0e1851605851" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/OncePerRuntimeSessionToken.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/OncePerRuntimeSessionToken.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/RuntimeSessionHelper.Editor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/RuntimeSessionHelper.Editor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/RuntimeSessionHelper.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/RuntimeSessionHelper.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Identify/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Identify/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New Test Asset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/New Test Asset.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/com.beardphantom.identify/JsonExtensions/UniqueObjectConverter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/com.beardphantom.identify/JsonExtensions/UniqueObjectConverter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/IUniqueObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/IUniqueObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/IUniqueObjectDataStore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/IUniqueObjectDataStore.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/SimpleUniqueObjectDataStore.Editor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/SimpleUniqueObjectDataStore.Editor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/SimpleUniqueObjectDataStore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/SimpleUniqueObjectDataStore.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/UniqueScriptableObject.Editor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/UniqueScriptableObject.Editor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/UniqueScriptableObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/UniqueScriptableObject.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/com.beardphantom.identify/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/com.beardphantom.identify/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2021.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,7 +119,7 @@
       <workItem from="1636953468741" duration="313000" />
       <workItem from="1636953795333" duration="496000" />
       <workItem from="1698489916870" duration="2496000" />
-      <workItem from="1698492865860" duration="353000" />
+      <workItem from="1698492865860" duration="1566000" />
     </task>
     <servers />
   </component>

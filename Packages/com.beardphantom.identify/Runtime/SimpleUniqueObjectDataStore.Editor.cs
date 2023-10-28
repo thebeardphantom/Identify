@@ -13,17 +13,15 @@ namespace BeardPhantom.Identify
         {
             AllData.Clear();
             var allData = AssetDatabase.FindAssets(
-                    "t:ScriptableObject",
+                    "t:UniqueScriptableObject",
                     new[]
                     {
                         "Assets"
                     })
                 .Select(AssetDatabase.GUIDToAssetPath)
                 .Select(AssetDatabase.LoadAssetAtPath<ScriptableObject>)
-                .OfType<IUniqueObject>()
-                .Cast<ScriptableObject>();
+                .Cast<UniqueScriptableObject>();
             AllData.AddRange(allData);
-            AllData.Remove(this);
         }
 
         #endregion

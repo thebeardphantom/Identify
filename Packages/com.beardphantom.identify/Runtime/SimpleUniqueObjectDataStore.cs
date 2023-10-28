@@ -4,48 +4,52 @@ using UnityEngine;
 namespace BeardPhantom.Identify
 {
     [CreateAssetMenu(menuName = "CUSTOM/" + nameof(SimpleUniqueObjectDataStore))]
-    public partial class SimpleUniqueObjectDataStore : ScriptableObject, IUniqueObjectDataStore, ISerializationCallbackReceiver
+    public partial class SimpleUniqueObjectDataStore : ScriptableObject, IUniqueObjectDataStore
     {
         #region Fields
 
-        private readonly Dictionary<string, IUniqueObject> _idToObject = new();
+        private readonly Dictionary<string, UniqueScriptableObject> _idToObject = new();
+
+        private readonly OncePerRuntimeSessionToken _onceToken = new();
 
         #endregion
 
         #region Properties
 
-        public IEnumerable<ScriptableObject> Data => AllData;
+        public IEnumerable<UniqueScriptableObject> Data => AllData;
 
         [field: SerializeField]
-        private List<ScriptableObject> AllData { get; set; } = new();
+        private List<UniqueScriptableObject> AllData { get; set; } = new();
 
         #endregion
 
         #region Methods
 
-        /// <inheritdoc />
-        public bool TryFindUniqueObject(string identifier, out IUniqueObject result)
+        public void BuildDatastore()
         {
-            return _idToObject.TryGetValue(identifier, out result);
+            if (!_onceToken.TryPerformOperation() && AllData.Count == _idToObject.Count)
+            {
+                return;
+            }
+
+            _idToObject.Clear();
+            foreach (var uniqueScriptableObject in AllData)
+            {
+                _idToObject.Add(uniqueScriptableObject.Identifier, uniqueScriptableObject);
+            }
         }
 
         /// <inheritdoc />
-        void ISerializationCallbackReceiver.OnBeforeSerialize() { }
-
-        /// <inheritdoc />
-        void ISerializationCallbackReceiver.OnAfterDeserialize()
+        public bool TryFindUniqueObject(string identifier, out IUniqueObject result)
         {
-            _idToObject.Clear();
-            foreach (var scriptableObject in AllData)
-            {
-                var uniqueObject = (IUniqueObject)scriptableObject;
-                if (string.IsNullOrWhiteSpace(uniqueObject.Identifier))
-                {
-                    continue;
-                }
+            var didFind = _idToObject.TryGetValue(identifier, out var soResult);
+            result = soResult;
+            return didFind;
+        }
 
-                _idToObject.TryAdd(uniqueObject.Identifier, uniqueObject);
-            }
+        private void OnEnable()
+        {
+            BuildDatastore();
         }
 
         #endregion
