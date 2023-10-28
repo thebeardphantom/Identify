@@ -11,9 +11,6 @@ namespace BeardPhantom.Identify
         [field: HideInInspector]
         public string Identifier { get; private set; }
 
-        /// <inheritdoc />
-        public PropertyName IdentifierFast { get; private set; }
-
         #endregion
 
         #region Methods
@@ -27,10 +24,7 @@ namespace BeardPhantom.Identify
         }
 
         /// <inheritdoc />
-        void ISerializationCallbackReceiver.OnAfterDeserialize()
-        {
-            IdentifierFast = new PropertyName(Identifier);
-        }
+        void ISerializationCallbackReceiver.OnAfterDeserialize() { }
 
         #endregion
     }

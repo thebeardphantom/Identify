@@ -41,12 +41,21 @@ namespace BeardPhantom.Identify
             foreach (var data in AllData)
             {
                 var uniqueObject = (IUniqueObject)data;
-                _idToObject.Add(uniqueObject.IdentifierFast, uniqueObject);
+                if (string.IsNullOrWhiteSpace(uniqueObject.Identifier))
+                {
+                    Debug.LogError($"Asset {data} has not generated its Identifier.", data);
+                }
+
+                if (!_idToObject.TryAdd(uniqueObject.Identifier, uniqueObject))
+                {
+                    var existing = (ScriptableObject)_idToObject[uniqueObject.Identifier];
+                    Debug.LogError($"Asset {data} has duplicate Identifier with existing asset {existing}.", data);
+                }
             }
         }
 
         /// <inheritdoc />
-        public bool TryFindUniqueObject(PropertyName identifier, out IUniqueObject result)
+        public bool TryFindUniqueObject(string identifier, out IUniqueObject result)
         {
             if (BuildLazily)
             {

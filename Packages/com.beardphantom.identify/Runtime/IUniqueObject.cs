@@ -8,8 +8,6 @@ namespace BeardPhantom.Identify
 
         string Identifier { get; }
 
-        PropertyName IdentifierFast { get; }
-
         #endregion
     }
 }
