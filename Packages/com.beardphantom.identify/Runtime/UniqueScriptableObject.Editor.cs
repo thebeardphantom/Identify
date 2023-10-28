@@ -8,6 +8,12 @@ namespace BeardPhantom.Identify
     {
         #region Methods
 
+        [ContextMenu("Print Identifier")]
+        private void PrintIdentifier()
+        {
+            Debug.Log(Identifier, this);
+        }
+
         private void SerializeInEditor()
         {
             var globalObjectId = GlobalObjectId.GetGlobalObjectIdSlow(this);
