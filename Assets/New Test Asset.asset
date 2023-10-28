@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d4375354124ecf4ca8ad6cbf5802824, type: 3}
   m_Name: New Test Asset
   m_EditorClassIdentifier: 
-  _hashString: 0a42d2ce1eb79a02eb9a657c8f78a2c5
-  <Data>k__BackingField: 61278468
+  <IdentifierString>k__BackingField: GlobalObjectId_V1-3-ebf28800d373a72489f287e9abb3183f-11400000-0
+  <Data>k__BackingField: 127

@@ -1,0 +1,22 @@
+{
+    "name": "BeardPhantom.Identify.Json",
+    "rootNamespace": "BeardPhantom.Identify.Json",
+    "references": [
+        "GUID:3543e8cd3ac01bc45ab228890d0fcf16"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.nuget.newtonsoft-json",
+            "expression": "0.0.0",
+            "define": "JSON_EXTENSIONS_ENABLED"
+        }
+    ],
+    "noEngineReferences": false
+}

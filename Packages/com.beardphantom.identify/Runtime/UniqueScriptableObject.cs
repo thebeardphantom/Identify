@@ -2,55 +2,36 @@ using UnityEngine;
 
 namespace BeardPhantom.Identify
 {
-#if UNITY_2020
-    public partial class UniqueScriptableObject : ScriptableObject,
-        IUniqueScriptableObject,
-        ISerializationCallbackReceiver
+    public partial class UniqueScriptableObject : ScriptableObject, IUniqueObject
     {
-        #region Fields
-
-        [SerializeField]
-        [HideInInspector]
-        private string _hashString;
-
-        #endregion
-
         #region Properties
 
         /// <inheritdoc />
-        public Hash128 GuidHash { get; private set; }
+        [field: SerializeField]
+        [field: HideInInspector]
+        public string IdentifierString { get; private set; }
+
+        /// <inheritdoc />
+        public PropertyName Identifier { get; private set; }
 
         #endregion
 
         #region Methods
 
         /// <inheritdoc />
-        public void OnBeforeSerialize()
+        void ISerializationCallbackReceiver.OnBeforeSerialize()
         {
 #if UNITY_EDITOR
-            UpdateHashString();
+            SerializeInEditor();
 #endif
         }
 
         /// <inheritdoc />
-        public void OnAfterDeserialize()
+        void ISerializationCallbackReceiver.OnAfterDeserialize()
         {
-            GuidHash = Hash128.Parse(_hashString);
+            Identifier = new PropertyName(IdentifierString);
         }
 
         #endregion
     }
-
-#else
-    public partial class UniqueScriptableObject : ScriptableObject, IUniqueScriptableObject
-    {
-        #region Properties
-
-        [field: SerializeField]
-        [field: HideInInspector]
-        public Hash128 GuidHash { get; private set; }
-
-        #endregion
-    }
-#endif
 }

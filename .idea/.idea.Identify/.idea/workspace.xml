@@ -1,27 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc72234d-f087-4687-851f-0e1851605851" name="Changes" comment="" />
+    <list default="true" id="fc72234d-f087-4687-851f-0e1851605851" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Packages/com.beardphantom.identify/JsonExtensions/IUniqueObjectConverter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.beardphantom.identify/JsonExtensions/IUniqueObjectConverter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/IUniqueObjectDataStore.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/IUniqueObjectDataStore.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Identify/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Identify/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New Test Asset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/New Test Asset.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/IUniqueScriptableObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/IUniqueObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/IUniqueScriptableObject.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/IUniqueObject.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/IdentifyUtility.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/IdentifyUtility.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/UniqueScriptableObject.Editor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/UniqueScriptableObject.Editor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/UniqueScriptableObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/UniqueScriptableObject.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/com.beardphantom.identify/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/com.beardphantom.identify/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/UniqueScriptableObject.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ad3eaa0878d94cbe8e45f9c494d7164713bc00/4a/0af6259b/Hash128.cs" root0="SKIP_HIGHLIGHTING" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/273a7cbcc8d7454ea7ae78e07082aa77823600/9e/9182ee21/GlobalObjectId.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/273a7cbcc8d7454ea7ae78e07082aa77823600/e1/b1e3dce3/SceneObjectIdentifier.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/53aac14d88ba4477acc998b039cfd73a15ae00/78/daa4141a/ISerializationCallbackReceiver.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/UniqueScriptableObject.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 8
+}]]></component>
   <component name="ProjectId" id="20w4qFyVum7IigzSzStL9jaeCMo" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="Discover.Launch.Via.Unity" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\mika\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\DecompilerCache",
+      "C:\\Users\\mika\\AppData\\Roaming\\JetBrains\\Rider2023.2\\resharper-host\\SourcesCache",
+      "C:\\Users\\mika\\AppData\\Local\\Symbols\\src"
+    ]
+  }
+}]]></component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="C:\_Content\WorkRoot\UnityEditors\2021.3.31f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-projectPath C:\_Content\WorkRoot\UPM\Identify -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="C:\_Content\WorkRoot\UPM\Identify" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="C:\_Content\WorkRoot\UnityEditors\2021.3.31f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\_Content\WorkRoot\UPM\Identify -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="C:\_Content\WorkRoot\UPM\Identify" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
     <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
@@ -58,9 +119,14 @@
       <workItem from="1636943118071" duration="1463000" />
       <workItem from="1636950296177" duration="833000" />
       <workItem from="1636952336437" duration="793000" />
-      <workItem from="1636953468741" duration="62000" />
+      <workItem from="1636953468741" duration="313000" />
+      <workItem from="1636953795333" duration="496000" />
+      <workItem from="1698489916870" duration="1355000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />

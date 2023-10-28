@@ -2,11 +2,13 @@
 
 namespace BeardPhantom.Identify
 {
-    public interface IUniqueScriptableObject
+    public interface IUniqueObject
     {
         #region Properties
 
-        Hash128 GuidHash { get; }
+        string IdentifierString { get; }
+
+        PropertyName Identifier { get; }
 
         #endregion
     }

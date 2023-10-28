@@ -1,8 +1,8 @@
 {
   "name": "com.beardphantom.identify",
   "displayName": "Identify",
-  "version": "0.0.5",
-  "unity": "2020.3",
+  "version": "0.1.0",
+  "unity": "2021.3",
   "description": "A consistent mechanism for uniquely identifying ScriptableObject instances.",
   "keywords": [
     "Identification",
