@@ -2,6 +2,7 @@
 using BeardPhantom.Identify;
 using Newtonsoft.Json;
 using System;
+using UnityEngine.Assertions;
 
 namespace JsonExtensions
 {
@@ -39,7 +40,9 @@ namespace JsonExtensions
             JsonSerializer serializer)
         {
             var identifier = (string)reader.Value;
-            return _uniqueObjectDataStore.FindUniqueObject(identifier);
+            var didFind = _uniqueObjectDataStore.TryFindUniqueObject(identifier, out var result);
+            Assert.IsTrue(didFind, "didFind");
+            return result;
         }
 
         #endregion

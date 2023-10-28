@@ -6,7 +6,7 @@ namespace BeardPhantom.Identify
     {
         #region Methods
 
-        IUniqueObject FindUniqueObject(PropertyName identifier);
+        bool TryFindUniqueObject(PropertyName identifier, out IUniqueObject result);
 
         #endregion
     }

@@ -5,22 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc72234d-f087-4687-851f-0e1851605851" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Packages/com.beardphantom.identify/JsonExtensions/IUniqueObjectConverter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/com.beardphantom.identify/JsonExtensions/IUniqueObjectConverter.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/IUniqueObjectDataStore.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/IUniqueObjectDataStore.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/SimpleUniqueObjectDataStore.Editor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/SimpleUniqueObjectDataStore.Editor.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Identify/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Identify/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/New Test Asset.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/New Test Asset.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/IUniqueScriptableObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/IUniqueObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/IUniqueScriptableObject.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/IUniqueObject.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/IdentifyUtility.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/IdentifyUtility.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/UniqueScriptableObject.Editor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/UniqueScriptableObject.Editor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/UniqueScriptableObject.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/UniqueScriptableObject.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/com.beardphantom.identify/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/com.beardphantom.identify/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/com.beardphantom.identify/JsonExtensions/IUniqueObjectConverter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/com.beardphantom.identify/JsonExtensions/UniqueObjectConverter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/com.beardphantom.identify/JsonExtensions/IUniqueObjectConverter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/com.beardphantom.identify/JsonExtensions/UniqueObjectConverter.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/IUniqueObjectDataStore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/IUniqueObjectDataStore.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +23,10 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/273a7cbcc8d7454ea7ae78e07082aa77823600/9e/9182ee21/GlobalObjectId.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/273a7cbcc8d7454ea7ae78e07082aa77823600/e1/b1e3dce3/SceneObjectIdentifier.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/53aac14d88ba4477acc998b039cfd73a15ae00/2c/8e56336f/PropertyNameUtils.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/53aac14d88ba4477acc998b039cfd73a15ae00/4d/af74cb22/PropertyName.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/53aac14d88ba4477acc998b039cfd73a15ae00/78/daa4141a/ISerializationCallbackReceiver.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/IUniqueObjectDataStore.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Packages/com.beardphantom.identify/Runtime/UniqueScriptableObject.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -121,7 +114,7 @@
       <workItem from="1636952336437" duration="793000" />
       <workItem from="1636953468741" duration="313000" />
       <workItem from="1636953795333" duration="496000" />
-      <workItem from="1698489916870" duration="1355000" />
+      <workItem from="1698489916870" duration="1953000" />
     </task>
     <servers />
   </component>
