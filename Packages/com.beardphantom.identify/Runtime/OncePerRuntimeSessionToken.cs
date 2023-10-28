@@ -4,6 +4,17 @@ namespace BeardPhantom.Identify
 {
     internal class OncePerRuntimeSessionToken
     {
+        #region Types
+
+        public enum State
+        {
+            NotInRuntime = 0,
+            AlreadyTriggered = 1,
+            JustTriggered = 2
+        }
+
+        #endregion
+
         #region Fields
 
         private Guid? _lastExecSessionGuid;
@@ -12,20 +23,21 @@ namespace BeardPhantom.Identify
 
         #region Methods
 
-        public bool TryPerformOperation()
+        public State TryPerformOperation()
         {
             if (!RuntimeSessionHelper.IsPlaying)
             {
-                return false;
+                return State.NotInRuntime;
             }
 
-            if (!_lastExecSessionGuid.HasValue || RuntimeSessionHelper.SessionGuid != _lastExecSessionGuid)
+            if (_lastExecSessionGuid.HasValue && RuntimeSessionHelper.SessionGuid == _lastExecSessionGuid)
             {
-                _lastExecSessionGuid = RuntimeSessionHelper.SessionGuid;
-                return true;
+                return State.AlreadyTriggered;
             }
 
-            return false;
+            _lastExecSessionGuid = RuntimeSessionHelper.SessionGuid;
+            return State.JustTriggered;
+
         }
 
         #endregion

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3810db76312241c985af60052c7654f8, type: 3}
   m_Name: New Simple Unique Object Data Store
   m_EditorClassIdentifier: 
+  <BuildLazily>k__BackingField: 0
   <AllData>k__BackingField:
   - {fileID: 11400000, guid: 6d4ece50849eb664abb72fbee5c84cad, type: 2}
   - {fileID: 11400000, guid: ebf28800d373a72489f287e9abb3183f, type: 2}

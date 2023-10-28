@@ -8,7 +8,7 @@ namespace BeardPhantom.Identify
     {
         #region Fields
 
-        private readonly Dictionary<string, UniqueScriptableObject> _idToObject = new();
+        private readonly Dictionary<string, IUniqueObject> _idToObject = new();
 
         private readonly OncePerRuntimeSessionToken _onceToken = new();
 
@@ -16,32 +16,43 @@ namespace BeardPhantom.Identify
 
         #region Properties
 
-        public IEnumerable<UniqueScriptableObject> Data => AllData;
+        public IEnumerable<IUniqueObject> Data => _idToObject.Values;
 
         [field: SerializeField]
-        private List<UniqueScriptableObject> AllData { get; set; } = new();
+        private bool BuildLazily { get; set; }
+
+        [field: SerializeField]
+        private List<ScriptableObject> AllData { get; set; } = new();
 
         #endregion
 
         #region Methods
 
-        public void BuildDatastore()
+        public void RebuildDatastore(bool force = false)
         {
-            if (!_onceToken.TryPerformOperation() && AllData.Count == _idToObject.Count)
+            if (!force
+                && AllData.Count == _idToObject.Count
+                && _onceToken.TryPerformOperation() != OncePerRuntimeSessionToken.State.JustTriggered)
             {
                 return;
             }
 
             _idToObject.Clear();
-            foreach (var uniqueScriptableObject in AllData)
+            foreach (var data in AllData)
             {
-                _idToObject.Add(uniqueScriptableObject.Identifier, uniqueScriptableObject);
+                var uniqueObject = (IUniqueObject)data;
+                _idToObject.Add(uniqueObject.Identifier, uniqueObject);
             }
         }
 
         /// <inheritdoc />
         public bool TryFindUniqueObject(string identifier, out IUniqueObject result)
         {
+            if (BuildLazily)
+            {
+                RebuildDatastore();
+            }
+
             var didFind = _idToObject.TryGetValue(identifier, out var soResult);
             result = soResult;
             return didFind;
@@ -49,7 +60,7 @@ namespace BeardPhantom.Identify
 
         private void OnEnable()
         {
-            BuildDatastore();
+            RebuildDatastore();
         }
 
         #endregion
