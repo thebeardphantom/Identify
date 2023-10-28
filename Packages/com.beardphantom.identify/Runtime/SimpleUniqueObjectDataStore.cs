@@ -8,7 +8,7 @@ namespace BeardPhantom.Identify
     {
         #region Fields
 
-        private readonly Dictionary<string, IUniqueObject> _idToObject = new();
+        private readonly Dictionary<PropertyName, IUniqueObject> _idToObject = new();
 
         private readonly OncePerRuntimeSessionToken _onceToken = new();
 
@@ -41,12 +41,12 @@ namespace BeardPhantom.Identify
             foreach (var data in AllData)
             {
                 var uniqueObject = (IUniqueObject)data;
-                _idToObject.Add(uniqueObject.Identifier, uniqueObject);
+                _idToObject.Add(uniqueObject.IdentifierFast, uniqueObject);
             }
         }
 
         /// <inheritdoc />
-        public bool TryFindUniqueObject(string identifier, out IUniqueObject result)
+        public bool TryFindUniqueObject(PropertyName identifier, out IUniqueObject result)
         {
             if (BuildLazily)
             {
@@ -60,7 +60,7 @@ namespace BeardPhantom.Identify
 
         private void OnEnable()
         {
-            RebuildDatastore();
+            RebuildDatastore(true);
         }
 
         #endregion

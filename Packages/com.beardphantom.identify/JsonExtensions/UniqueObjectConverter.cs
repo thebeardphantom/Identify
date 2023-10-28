@@ -1,10 +1,9 @@
 ﻿#if JSON_EXTENSIONS_ENABLED
-using BeardPhantom.Identify;
 using Newtonsoft.Json;
 using System;
 using UnityEngine.Assertions;
 
-namespace JsonExtensions
+namespace BeardPhantom.Identify.Json
 {
     public class UniqueObjectConverter : JsonConverter<IUniqueObject>
     {

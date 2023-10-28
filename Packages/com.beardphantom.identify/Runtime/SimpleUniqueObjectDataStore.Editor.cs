@@ -12,18 +12,27 @@ namespace BeardPhantom.Identify
         /// <inheritdoc />
         void ISerializationCallbackReceiver.OnBeforeSerialize()
         {
-            AllData.Clear();
-            var allData = AssetDatabase.FindAssets(
-                    $"t:{nameof(ScriptableObject)}",
-                    new[]
-                    {
-                        "Assets"
-                    })
-                .Select(AssetDatabase.GUIDToAssetPath)
-                .Select(AssetDatabase.LoadAssetAtPath<ScriptableObject>)
-                .OfType<IUniqueObject>()
-                .Cast<ScriptableObject>();
-            AllData.AddRange(allData);
+            try
+            {
+                var allData = AssetDatabase.FindAssets(
+                        $"t:{nameof(ScriptableObject)}",
+                        new[]
+                        {
+                            "Assets"
+                        })
+                    .Select(AssetDatabase.GUIDToAssetPath)
+                    .Select(AssetDatabase.LoadAssetAtPath<ScriptableObject>)
+                    .OfType<IUniqueObject>()
+                    .Cast<ScriptableObject>()
+                    .ToArray();
+                AllData.Clear();
+                AllData.AddRange(allData);
+            }
+            catch (UnityException)
+            {
+                // Need to aggressively look for assets but an exception is thrown if domain is being backed up during domain
+                // reloading. No (?) way to detect domain reloads specifically so a try/catch must be used.
+            }
         }
 
         /// <inheritdoc />
