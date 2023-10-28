@@ -1,4 +1,5 @@
 ﻿#if UNITY_EDITOR
+using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
@@ -9,18 +10,24 @@ namespace BeardPhantom.Identify
     {
         #region Methods
 
+        internal static IEnumerable<string> GetUniqueAssetPaths()
+        {
+            return AssetDatabase.FindAssets(
+                    $"t:{nameof(ScriptableObject)}",
+                    new[]
+                    {
+                        "Assets"
+                    })
+                .Select(AssetDatabase.GUIDToAssetPath)
+                .Where(path => typeof(IUniqueObject).IsAssignableFrom(AssetDatabase.GetMainAssetTypeAtPath(path)));
+        }
+
         /// <inheritdoc />
         void ISerializationCallbackReceiver.OnBeforeSerialize()
         {
             try
             {
-                var allData = AssetDatabase.FindAssets(
-                        $"t:{nameof(ScriptableObject)}",
-                        new[]
-                        {
-                            "Assets"
-                        })
-                    .Select(AssetDatabase.GUIDToAssetPath)
+                var allData = GetUniqueAssetPaths()
                     .Select(AssetDatabase.LoadAssetAtPath<ScriptableObject>)
                     .OfType<IUniqueObject>()
                     .Cast<ScriptableObject>()
