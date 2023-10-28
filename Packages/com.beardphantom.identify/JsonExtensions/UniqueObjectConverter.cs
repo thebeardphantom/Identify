@@ -28,7 +28,7 @@ namespace JsonExtensions
         /// <inheritdoc />
         public override void WriteJson(JsonWriter writer, IUniqueObject value, JsonSerializer serializer)
         {
-            writer.WriteValue(value.IdentifierString);
+            writer.WriteValue(value.Identifier);
         }
 
         /// <inheritdoc />

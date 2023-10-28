@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d4375354124ecf4ca8ad6cbf5802824, type: 3}
-  m_Name: New Test Asset
+  m_Script: {fileID: 11500000, guid: 3810db76312241c985af60052c7654f8, type: 3}
+  m_Name: New Simple Unique Object Data Store
   m_EditorClassIdentifier: 
-  <Identifier>k__BackingField: GlobalObjectId_V1-3-ebf28800d373a72489f287e9abb3183f-11400000-0
-  <Data>k__BackingField: 438
+  <AllData>k__BackingField:
+  - {fileID: 11400000, guid: 6d4ece50849eb664abb72fbee5c84cad, type: 2}
+  - {fileID: 11400000, guid: ebf28800d373a72489f287e9abb3183f, type: 2}

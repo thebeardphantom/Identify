@@ -8,7 +8,7 @@ namespace BeardPhantom.Identify
     {
         #region Fields
 
-        private readonly Dictionary<PropertyName, IUniqueObject> _nameToObject = new();
+        private readonly Dictionary<string, IUniqueObject> _idToObject = new();
 
         #endregion
 
@@ -24,9 +24,9 @@ namespace BeardPhantom.Identify
         #region Methods
 
         /// <inheritdoc />
-        public bool TryFindUniqueObject(PropertyName identifier, out IUniqueObject result)
+        public bool TryFindUniqueObject(string identifier, out IUniqueObject result)
         {
-            return _nameToObject.TryGetValue(identifier, out result);
+            return _idToObject.TryGetValue(identifier, out result);
         }
 
         /// <inheritdoc />
@@ -35,11 +35,16 @@ namespace BeardPhantom.Identify
         /// <inheritdoc />
         void ISerializationCallbackReceiver.OnAfterDeserialize()
         {
-            _nameToObject.Clear();
+            _idToObject.Clear();
             foreach (var scriptableObject in AllData)
             {
                 var uniqueObject = (IUniqueObject)scriptableObject;
-                _nameToObject.Add(uniqueObject.Identifier, uniqueObject);
+                if (string.IsNullOrWhiteSpace(uniqueObject.Identifier))
+                {
+                    continue;
+                }
+
+                _idToObject.TryAdd(uniqueObject.Identifier, uniqueObject);
             }
         }
 

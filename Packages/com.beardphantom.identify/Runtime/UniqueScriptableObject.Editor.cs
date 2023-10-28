@@ -10,7 +10,7 @@ namespace BeardPhantom.Identify
 
         private void SerializeInEditor()
         {
-            IdentifierString = GlobalObjectId.GetGlobalObjectIdSlow(this).ToString();
+            Identifier = GlobalObjectId.GetGlobalObjectIdSlow(this).ToString();
         }
 
         #endregion

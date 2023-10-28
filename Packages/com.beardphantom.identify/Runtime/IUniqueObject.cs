@@ -6,9 +6,7 @@ namespace BeardPhantom.Identify
     {
         #region Properties
 
-        string IdentifierString { get; }
-
-        PropertyName Identifier { get; }
+        string Identifier { get; }
 
         #endregion
     }
