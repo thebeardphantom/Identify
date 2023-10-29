@@ -22,9 +22,13 @@ namespace BeardPhantom.Identify
                 .Where(path => typeof(IUniqueObject).IsAssignableFrom(AssetDatabase.GetMainAssetTypeAtPath(path)));
         }
 
-        /// <inheritdoc />
-        void ISerializationCallbackReceiver.OnBeforeSerialize()
+        private void FindAllData()
         {
+            if (RuntimeSessionHelper.IsPlaying)
+            {
+                return;
+            }
+            
             try
             {
                 var allData = GetUniqueAssetPaths()
@@ -43,7 +47,16 @@ namespace BeardPhantom.Identify
         }
 
         /// <inheritdoc />
-        void ISerializationCallbackReceiver.OnAfterDeserialize() { }
+        void ISerializationCallbackReceiver.OnBeforeSerialize()
+        {
+            FindAllData();
+        }
+
+        /// <inheritdoc />
+        void ISerializationCallbackReceiver.OnAfterDeserialize()
+        {
+            FindAllData();
+        }
 
         #endregion
     }

@@ -2,7 +2,7 @@
 
 namespace BeardPhantom.Identify
 {
-    internal class OncePerRuntimeSessionToken
+    public class OncePerRuntimeSessionToken
     {
         #region Types
 
@@ -37,7 +37,6 @@ namespace BeardPhantom.Identify
 
             _lastExecSessionGuid = RuntimeSessionHelper.SessionGuid;
             return State.JustTriggered;
-
         }
 
         #endregion
