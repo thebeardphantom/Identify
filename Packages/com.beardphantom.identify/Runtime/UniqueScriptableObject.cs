@@ -4,27 +4,31 @@ namespace BeardPhantom.Identify
 {
     public partial class UniqueScriptableObject : ScriptableObject, IUniqueObject
     {
-        #region Properties
+        #region Fields
 
-        /// <inheritdoc />
-        [field: SerializeField]
-        [field: HideInInspector]
-        public string Identifier { get; private set; }
+        [SerializeField]
+        [HideInInspector]
+        private string _identifier;
 
         #endregion
 
-        #region Methods
+        #region Properties
 
         /// <inheritdoc />
-        void ISerializationCallbackReceiver.OnBeforeSerialize()
+
+        public string Identifier
         {
+            get
+            {
 #if UNITY_EDITOR
-            SerializeInEditor();
+                if (string.IsNullOrWhiteSpace(_identifier))
+                {
+                    _identifier = RegenerateIdentifier();
+                }
 #endif
+                return _identifier;
+            }
         }
-
-        /// <inheritdoc />
-        void ISerializationCallbackReceiver.OnAfterDeserialize() { }
 
         #endregion
     }

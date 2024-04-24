@@ -1,5 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace BeardPhantom.Identify
 {
@@ -9,7 +12,7 @@ namespace BeardPhantom.Identify
 
         protected readonly Dictionary<string, IUniqueObject> IdToObject = new();
 
-        protected readonly OncePerRuntimeSessionToken LoadToken = new();
+        protected readonly Dictionary<Type, HashSet<IUniqueObject>> ObjectsByType = new();
 
         #endregion
 
@@ -17,43 +20,48 @@ namespace BeardPhantom.Identify
 
         public IEnumerable<IUniqueObject> Data => IdToObject.Values;
 
-        [field: SerializeField]
-        private bool BuildOnEnable { get; set; }
-
-        [field: SerializeField]
-        private bool BuildLazily { get; set; }
-
         #endregion
 
         #region Methods
 
-        public abstract void RebuildDataStore(bool force = false);
+        public abstract void RebuildDataStore();
+
+        public abstract Awaitable RebuildDataStoreAsync();
 
         /// <inheritdoc />
         public bool TryFindUniqueObject(string identifier, out IUniqueObject result)
         {
-            if (BuildLazily)
-            {
-                RebuildDataStoreIfNecessary();
-            }
-
             return IdToObject.TryGetValue(identifier, out result);
         }
 
-        private void RebuildDataStoreIfNecessary(bool force = false)
+        /// <inheritdoc />
+        public IEnumerable<T> GetAllOfType<T>()
         {
-            if (force || LoadToken.TryPerformOperation() == OncePerRuntimeSessionToken.State.JustTriggered)
-            {
-                RebuildDataStore(force);
-            }
+            var set = ObjectsByType[typeof(T)];
+            return set.Cast<T>();
         }
 
-        private void OnEnable()
+        protected void RegisterData(IUniqueObject data)
         {
-            if (BuildOnEnable)
+            if (string.IsNullOrWhiteSpace(data.Identifier))
             {
-                RebuildDataStoreIfNecessary(true);
+                Debug.LogError($"UniqueObject {data} has not generated its Identifier.", data as Object);
             }
+
+            if (!IdToObject.TryAdd(data.Identifier, data))
+            {
+                var existing = IdToObject[data.Identifier];
+                Debug.LogError($"Asset {data} has duplicate Identifier with existing asset {existing}.", data as Object);
+            }
+
+            var type = data.GetType();
+            if (!ObjectsByType.TryGetValue(type, out var set))
+            {
+                set = new HashSet<IUniqueObject>();
+                ObjectsByType[type] = set;
+            }
+
+            set.Add(data);
         }
 
         #endregion

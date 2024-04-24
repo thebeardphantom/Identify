@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿#if UNITY_EDITOR
+using UnityEditor;
 
 namespace BeardPhantom.Identify
 {
@@ -24,3 +25,4 @@ namespace BeardPhantom.Identify
         #endregion
     }
 }
+#endif

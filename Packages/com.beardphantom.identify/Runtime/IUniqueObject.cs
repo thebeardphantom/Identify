@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace BeardPhantom.Identify
+﻿namespace BeardPhantom.Identify
 {
     public interface IUniqueObject
     {

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.ResourceManagement.AsyncOperations;
+using static UnityEngine.AddressableAssets.Addressables;
 
 namespace BeardPhantom.Identify.Addressables
 {
@@ -23,24 +24,44 @@ namespace BeardPhantom.Identify.Addressables
 
         #region Methods
 
-        public override void RebuildDataStore(bool force = false)
+        public override void RebuildDataStore()
         {
-            IdToObject.Clear();
-            if (_asyncOperationHandle.IsValid())
+            RebuildDataStoreInternal();
+            _asyncOperationHandle.WaitForCompletion();
+        }
+
+        /// <inheritdoc />
+        public override async Awaitable RebuildDataStoreAsync()
+        {
+            RebuildDataStoreInternal();
+            await _asyncOperationHandle.Task;
+        }
+
+        private void RebuildDataStoreInternal()
+        {
+            if (_asyncOperationHandle.IsValid() && !_asyncOperationHandle.IsDone)
             {
-                UnityEngine.AddressableAssets.Addressables.Release(_asyncOperationHandle);
+                _asyncOperationHandle.WaitForCompletion();
+                Release(_asyncOperationHandle);
             }
 
-            _asyncOperationHandle =
-                UnityEngine.AddressableAssets.Addressables.LoadAssetsAsync<ScriptableObject>(GroupKey, OnLoadAsset);
+            IdToObject.Clear();
 
-            _asyncOperationHandle.WaitForCompletion();
+            _asyncOperationHandle = LoadAssetsAsync<ScriptableObject>(GroupKey, OnLoadAsset);
+            _asyncOperationHandle.Completed += OnCompleted;
+        }
+
+        private void OnCompleted(AsyncOperationHandle<IList<ScriptableObject>> asyncOperationHandle)
+        {
+            if (asyncOperationHandle.Equals(_asyncOperationHandle))
+            {
+                _asyncOperationHandle = default;
+            }
         }
 
         private void OnLoadAsset(ScriptableObject obj)
         {
-            var uniqueObject = (IUniqueObject)obj;
-            IdToObject.Add(uniqueObject.Identifier, uniqueObject);
+            RegisterData((IUniqueObject)obj);
         }
 
         #endregion
